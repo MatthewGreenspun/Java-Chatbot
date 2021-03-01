@@ -7,7 +7,7 @@ class Main {
     System.out.print("Bot: What is your name: ");
     String name = scanner.nextLine();
     System.out.println("Bot: Hello, " + name);
-    System.out.println("Bot: I am a chatbot. I can tell jokes, do some math, and do some other stuff. If you want to stop talking to me, just type \"quit\".");
+    System.out.println("Bot: I am a chatbot. I can tell jokes, do some math, and do some other stuff. Type \"help\" to see all of the commands. If you want to stop talking to me, just type \"quit\".");
     while(true) {
       System.out.print(name + ": ");
       String input = scanner.nextLine();
@@ -27,10 +27,12 @@ class Main {
         }
       } else if(input.equals("tell me a joke")){
         System.out.println("Bot: Sorry, I'm just not that funny");
-      } else if(input.equals("complement me")){
+      } else if(input.equals("compliment me")){
         System.out.println("bot: " + name + ", you are the coolest human I know!");
-      }  else if(input.equals("thanks")){
+      } else if(input.equals("thanks")){
         System.out.println("Bot: You're welcome!");
+      } else if(input.equals("help")){
+        System.out.println("Bot: \n- quit\n- leave me alone\n- change my name\n- tell me a joke\n- compliment me\n- thanks\n- help");
       } else 
         System.out.println("Bot: Sorry, I don't know what that means.");
     }
