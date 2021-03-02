@@ -44,7 +44,7 @@ class Main {
       } else if(input.equals("thanks")){
         System.out.println("Bot: You're welcome!");
       } else if(input.equals("help")){
-        System.out.println("Bot: \n- quit\n- leave me alone\n- change my name\n- tell me a riddle\n- compliment me\n- thanks\n- help");
+        System.out.println("Bot: \n- quit\n- leave me alone\n- change my name\n- tell me a riddle\n- compliment me\n- thanks\n- you can also type a simple math problem\n- help");
       } else 
         System.out.println("Bot: Sorry, I don't know what that means.");
     }
@@ -77,16 +77,16 @@ class Main {
         }
 
       } else {
-        System.out.println("Bot: Sorry, I don't know what that means. If you want me to do some math, then only use the characters \"0123456789+-*/\".");
+        System.out.println("Bot: Sorry, I don't know what that means. If you want me to do some math, then only use the characters \"0123456789+-*/\" and only give me exactly 2 numbers.");
         break;
       }
     }
     try {
       secondNumber = Integer.parseInt(secondNumberStr);
-      if(operation == '+') System.out.println("Bot: " + (firstNumber + secondNumber));
-      else if(operation == '-') System.out.println("Bot: " + (firstNumber - secondNumber));
-      else if(operation == '*') System.out.println("Bot: " + (firstNumber * secondNumber));
-      else if(operation == '/') System.out.println("Bot: " + (firstNumber / secondNumber));
+      if(operation == '+') System.out.println("Bot: " + firstNumberStr + " + " + secondNumberStr + " = " + (firstNumber + secondNumber));
+      else if(operation == '-') System.out.println("Bot: " + firstNumberStr + " - " + secondNumberStr + " = " + (firstNumber - secondNumber));
+      else if(operation == '*') System.out.println("Bot: " + firstNumberStr + " * " + secondNumberStr + " = " + (firstNumber * secondNumber));
+      else if(operation == '/') System.out.println("Bot: " + firstNumberStr + " / " + secondNumberStr + " = " + (firstNumber / secondNumber));
     } catch(Exception e) {
       System.out.println("Bot: Something went wrong. I guess I'm just not that great at math :(");
     }
