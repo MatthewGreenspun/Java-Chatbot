@@ -7,7 +7,7 @@ class Main {
     System.out.print("Bot: What is your name: ");
     String name = scanner.nextLine();
     System.out.println("Bot: Hello, " + name);
-    System.out.println("Bot: I am a chatbot. I can tell jokes, do some math, and do some other stuff. Type \"help\" to see all of the commands. If you want to stop talking to me, just type \"quit\".");
+    System.out.println("Bot: I am a chatbot. I can tell you riddles, do some math, and do some other stuff. Type \"help\" to see all of the commands. If you want to stop talking to me, just type \"quit\".");
     while(true) {
       System.out.print(name + ": ");
       String input = scanner.nextLine();
@@ -25,14 +25,26 @@ class Main {
           name = newName;
           System.out.println("Bot: Sounds good, " + name);
         }
-      } else if(input.equals("tell me a joke")){
-        System.out.println("Bot: Sorry, I'm just not that funny");
+      } else if(input.equals("tell me a riddle")){
+          String[][] riddles = {
+            {"What is lighter than a feather but hard to hold? ", "your breath"},
+            {"What has 4 legs but cannot walk? ", "a table"},
+            {"What has 88 keys but cannot open a single door? ", "a piano"},
+            {"What can't be used until it is broken? ", "an egg"}};
+          int index = (int)(Math.random()*4);
+          System.out.print("Bot: " + riddles[index][0]);
+          String answer = scanner.nextLine();
+          if(answer.equals(riddles[index][1])) System.out.println("Bot: You got it!");
+          else System.out.println("Bot: Nope!");
       } else if(input.equals("compliment me")){
-        System.out.println("bot: " + name + ", you are the coolest human I know!");
+        String[] compliments = {", you are the coolest human I know!",
+        ", you are awesome!", ", you are the best!", ", you are doing great things"};
+        int index = (int)(Math.random()*4);
+        System.out.println("bot: " + name + compliments[index]);
       } else if(input.equals("thanks")){
         System.out.println("Bot: You're welcome!");
       } else if(input.equals("help")){
-        System.out.println("Bot: \n- quit\n- leave me alone\n- change my name\n- tell me a joke\n- compliment me\n- thanks\n- help");
+        System.out.println("Bot: \n- quit\n- leave me alone\n- change my name\n- tell me a riddle\n- compliment me\n- thanks\n- help");
       } else 
         System.out.println("Bot: Sorry, I don't know what that means.");
     }
@@ -79,4 +91,5 @@ class Main {
       System.out.println("Bot: Something went wrong. I guess I'm just not that great at math :(");
     }
   }
+
 }
